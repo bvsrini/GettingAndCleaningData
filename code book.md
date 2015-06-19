@@ -16,15 +16,39 @@ data set is worked out for useful analysis. The tidy set involves only the data 
 multiple variables associated  with the data files. 
  
 ##Study design and data processing
- The original data  was collected from the Samsung Galaxy phones from 30 volunteers by various experiments. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
-The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
- 
+The original data  was collected from the Samsung Galaxy phones from 30 volunteers by various experiments. 
+Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a 
+smart phone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, number of observations were captured  for 
+the 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The obtained dataset has been randomly partitioned 
+into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
+The "Data Set Information" in the http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones or the README.txt contains more
+information
+
+The data set contains following files 
+
+* 'README.txt'
+* 'features_info.txt': Shows information about the variables used on the feature vector.
+* 'features.txt': List of all features.
+* 'activity_labels.txt': Labels for  the x_train and x_test with their activity name.
+* 'train/X_train.txt': Training set.
+* 'train/y_train.txt': Training labels.
+* 'test/X_test.txt': Test set.
+* 'test/y_test.txt': Test labels.
+
+The entire data set is partitioned into X_train.txt and X_test.txt. The corresponding activity numbers for the observations are in y_train.txt 
+and y_test.txt respectively.So the complete data set must be compiled by combining these two data sets. The column headers are in features.txt.  
+
+The project requires to select only variables that have mean() and std().  There are 66 variables that fit this criteria. The tidy data requires 
+data aggregated for all the subjects ( i.e.30) for all activities (i.e 6). So the final tidy data set is expected to have 6 * 30 = 180 rows  for all 
+subjects and activities and  66 variables + subject + activities = 68 columns. 
+
 ###Collection of the raw data
 Description of how the data was collected.
  
 ###Notes on the original (raw) data 
 Some additional notes (if avaialble, otherwise you can leave this section out).
- 
+There are total 30 volunteers (or subjects). The train data set contains 70% of the volunteer population. So the data set  
+
 ##Creating the tidy datafile
  
 ###Guide to create the tidy data file
