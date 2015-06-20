@@ -10,8 +10,8 @@ output:
 ## Project Description
 The project involves using the data collected from the accelerometers from the Samsung Galaxy S Smart phone, working with it and 
 prepare a clean data set "Human Activity Recognition Using Smart phones Dataset Version 10" data set collected from  the 
-(http://archiveicsuciedu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) or 
-(https://d396qusza40orccloudfrontnet/getdata%2Fprojectfiles%2FUCI%20HAR%20Datasetzip) site is studied and a tidy 
+ [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) or 
+[Project Data Set]https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip site is studied and a tidy 
 data set is worked out for useful analysis The tidy set involves only the data associated with  the mean and standard deviation of 
 multiple variables associated  with the data files 
  
@@ -21,8 +21,8 @@ Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTA
 smart phone (Samsung Galaxy S II) on the waist Using its embedded accelerometer and gyroscope, number of observations were captured  for 
 the 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz The obtained dataset has been randomly partitioned 
 into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data
-The "Data Set Information" in the (http://archiveicsuciedu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) or the READMEtxt contains more
-information
+The "Data Set Information" in the  [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) 
+ or the READMEtxt contains more information
 
 The data set contains following files 
 
@@ -44,7 +44,7 @@ subjects and activities and  66 variables + subject + activities = 68 columns
 
 ###Collection of the raw data
 The following link explains how the original data is collected and pre-processed from the  30 volunteers 
-(https://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.names)
+ [UCI Machine Learning Repository- Data Set](https://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.names)
 
 ###Notes on the original (raw) data 
 There are total 30 volunteers (or subjects) The train data set contains 70% of the volunteer population and the test data set contains 30%.
