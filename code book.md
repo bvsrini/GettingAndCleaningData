@@ -88,36 +88,36 @@ features.txt variable names from the data set
  
 ###Guide to create the tidy data file
 Following are the  steps to create the tidy data file. The names within the () at  the end represent the actual names of variables within the script:
-1. Download the data files from [Project Data Set] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
-2. load the  "features.txt" from "UCI HAR Dataset" directory  into a data table (fact)
-3. Load the "activity_labels.txt" from "UCI HAR Dataset" directory  into a data table (act_lab)
-4. Observe the values and organization of variables and data in these two files 
-5. Change the directory to "test" to get the "test" observations
-6. Load the "subject_test.txt" (to get the subject number for each of the observation) into a data table (subject_test) 
-7. Load the "X_test.txt" into a data table (x_test)
-8. Load the "y_test.txt" into a data table (to get the activity number of the observation)(y_test)
-9. Observe the values and organization of variables and data in these three files from steps 6,7 & 8
-10. Change the directory to "train" to get the "train" observations
-11. Load the "subject_train.txt" (to get the subject number for each of the observation) into a data table (subject_train)
-12. Load the "X_train.txt" into a data table (x_train)
-13. Load the "y_train.txt" into a data table (to get the activity number of the observation) (y_train)
-14. Observe the values and organization of variables and data in these two files from steps 11,12 & 13
-15. Form one data set by  combining the train and test data sets.Attach the column headers and row headers as shown below:
-	a. Attach X_train data  below the X_test data (data)
-	b. Attach the column names for the observations from step 2 on top of this data set (data)
-	c. Retain only the columns containing mean() and std() in their variables. care is taken not to include variables like meanFreq() (sel_data)
-	d. Attach the subject_train below the subject_train data (subjects)
-	e. Attach the y_train data below y_test data (activities)
-	f. Attach subjects,activities as  "Subjects" and "Activities1" columns to the sel_data data table.
-	g. Add a column "Activities" by resolving the activity numbers on "Activities1" to activity labels using act_lab data set from step 2
-	h. Drop Activities1 column 
-	i. Now sel_data contains required columns in the required format.
-16. Clean the observations data by aggregating into subjects and activities as follows:
-	a. Melt the data using Subjects and Activities as id column (melt_data)
-	b. Aggregate (get the mean) the molten data by Activities,Subjects,Variables columns. This will get one value for each subject,activity 
-	    and a variable combination.
-	c. Assign a tidy data set by transposing  the molten data into a wide format so we get tidy_data in the following format.
-	  "Activities", "Subjects" ,"tBodyAcc-mean()-X" ,"tBodyAcc-mean()-Y","tBodyAcc-mean()-Z","tBodyAcc-std()-X","tBodyAcc-std()-Y" etc
+	1. Download the data files from [Project Data Set] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+	2. load the  "features.txt" from "UCI HAR Dataset" directory  into a data table (fact)
+	3. Load the "activity_labels.txt" from "UCI HAR Dataset" directory  into a data table (act_lab)
+	4. Observe the values and organization of variables and data in these two files 
+	5. Change the directory to "test" to get the "test" observations
+	6. Load the "subject_test.txt" (to get the subject number for each of the observation) into a data table (subject_test) 
+	7. Load the "X_test.txt" into a data table (x_test)
+	8. Load the "y_test.txt" into a data table (to get the activity number of the observation)(y_test)
+	9. Observe the values and organization of variables and data in these three files from steps 6,7 & 8
+	10. Change the directory to "train" to get the "train" observations
+	11. Load the "subject_train.txt" (to get the subject number for each of the observation) into a data table (subject_train)
+	12. Load the "X_train.txt" into a data table (x_train)
+	13. Load the "y_train.txt" into a data table (to get the activity number of the observation) (y_train)
+	14. Observe the values and organization of variables and data in these two files from steps 11,12 & 13
+	15. Form one data set by  combining the train and test data sets.Attach the column headers and row headers as shown below:
+		a. Attach X_train data  below the X_test data (data)
+		b. Attach the column names for the observations from step 2 on top of this data set (data)
+		c. Retain only the columns containing mean() and std() in their variables. care is taken not to include variables like meanFreq() (sel_data)
+		d. Attach the subject_train below the subject_train data (subjects)
+		e. Attach the y_train data below y_test data (activities)
+		f. Attach subjects,activities as  "Subjects" and "Activities1" columns to the sel_data data table.
+		g. Add a column "Activities" by resolving the activity numbers on "Activities1" to activity labels using act_lab data set from step 2
+		h. Drop Activities1 column 
+		i. Now sel_data contains required columns in the required format.
+	16. Clean the observations data by aggregating into subjects and activities as follows:
+		a. Melt the data using Subjects and Activities as id column (melt_data)
+		b. Aggregate (get the mean) the molten data by Activities,Subjects,Variables columns. This will get one value for each subject,activity 
+			and a variable combination.
+		c. Assign a tidy data set by transposing  the molten data into a wide format so we get tidy_data in the following format.
+		  "Activities", "Subjects" ,"tBodyAcc-mean()-X" ,"tBodyAcc-mean()-Y","tBodyAcc-mean()-Z","tBodyAcc-std()-X","tBodyAcc-std()-Y" etc
 
 ###Cleaning of the data
 Short, high-level description of what the cleaning script does [link to the readme document that describes the code in greater detail]()
