@@ -49,7 +49,7 @@ https://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Data
 ###Notes on the original (raw) data 
 There are total 30 volunteers (or subjects) The train data set contains 70% of the volunteer population and the test data set contains 30%.
 So the train data set  contains activities 21 subjects (volunteers) and the test data set contains 9 subjects.  There are 7352 observations on the train
-data set and 2947 observations on the test data set.  Out of the total 10299 observations the no of observations per each subject and activity is not equal
+data set and 2947 observations on the test data set.  Out of the total 10299 observations the no of observations for each subject is not equal
 as seen below. 
 ``` R
 >  as.list(summarize (group_by(sel_data,Subjects),n()))
@@ -63,6 +63,22 @@ $`n()`
 
 attr(,"drop")
 [1] TRUE
+```
+There are multiple rows of observations for the same subjects and activities without any additional information on them that separates them like date and time of 
+observation. So in order to prepare a tidy data we need to aggregate them. 
+
+Also the variable names for mean() and std() mentioned within features_info.txt is different than that is provided in features.txt
+```
+features_info.txt variable names
+---------------------------
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+features.txt variable names from the data set
+----------------------------------------------
+[64] "fBodyBodyAccJerkMag-std()"   "fBodyBodyGyroMag-mean()"     "fBodyBodyGyroMag-std()"     
+[67] "fBodyBodyGyroJerkMag-mean()" "fBodyBodyGyroJerkMag-std()" 
 ```
 ##Creating the tidy datafile
  
