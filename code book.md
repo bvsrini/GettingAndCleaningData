@@ -89,7 +89,7 @@ features.txt variable names from the data set
 ###Guide to create the tidy data file
 Following are the  steps to create the tidy data file. The names within the () at  the end represent the actual names of variables within the script:
 	
-	1. Download the data files from \[Project Data Set] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)\
+	1. Download the data files from [Project Data Set] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 	2. load the  "features.txt" from "UCI HAR Dataset" directory  into a data table (fact)
 	3. Load the "activity_labels.txt" from "UCI HAR Dataset" directory  into a data table (act_lab)
 	4. Observe the values and organization of variables and data in these two files 
@@ -112,7 +112,8 @@ Following are the  steps to create the tidy data file. The names within the () a
 		f. Attach subjects,activities as  "Subjects" and "Activities1" columns to the sel_data data table.
 		g. Add a column "Activities" by resolving the activity numbers on "Activities1" to activity labels using act_lab data set from step 2
 		h. Drop Activities1 column 
-		i. Now sel_data contains required columns in the required format.
+		i. Replace the column names which are erroneously defined with the correct name. 
+		j. Now sel_data contains required columns in the required format.
 	16. Clean the observations data by aggregating into subjects and activities as follows:
 		a. Melt the data using Subjects and Activities as id column (melt_data)
 		b. Aggregate (get the mean) the molten data by Activities,Subjects,Variables columns. This will get one value for each subject,activity 
@@ -121,6 +122,39 @@ Following are the  steps to create the tidy data file. The names within the () a
 		  "Activities", "Subjects" ,"tBodyAcc-mean()-X" ,"tBodyAcc-mean()-Y","tBodyAcc-mean()-Z","tBodyAcc-std()-X","tBodyAcc-std()-Y" etc
 
 ###Cleaning of the data
+ The above guide gives a great detail on the steps. This section concentrates on specific steps that specify the cleaning activities:
+ Step 15 (c) - Retain only the columns containing mean() and std() in their variables. care is taken not to include variables like meanFreq() (sel_data)
+ This step uses grep to pick columns that have mean() or std() as part of their name. 
+ ```
+ sel_col_nm <- grep("*.(mean|std)\\(\\)*",colnames(data))
+ sel_data <- data[,sel_col_nm]
+ ```
+  
+ Step 15 (g) - Add a column "Activities" by resolving the activity numbers on "Activities1" to activity labels using act_lab data set from step 2
+ This step is accomplished by looking up the activity labels from act_lab dataset based on the Activities number in Activities1 variable. 
+ 
+ ```
+ Activities = as.character(act_lab$V2)[sel_data$Activities1]
+ ```
+ Step 15 (i) -  Replace the column names which are erroneously defined with the correct name. 
+ The following code replaces the columns that contains "BodyBody" with "Body" as specified in the section "Notes on Original (Raw) Data"
+ ```
+ colnames(sel_data) <- sub("BodyBody","Body",colnames(sel_data))
+ ```
+ Step 16: Clean the observations data by aggregating into subjects and activities as follows:
+ The following code melts the columns, aggregates it and converts to wide format. Pls. note that change to Subjects variables is changed to factor 
+ for easy manipulation.
+ ```
+ melt_data <- melt(sel_data,id.vars = c("Subjects","Activities"))
+ sel_data <- sel_data %>% mutate(Subjects1 = factor(Subjects)) %>% select (-Subjects) %>% rename(Subjects = Subjects1)
+ melt_data <- melt(sel_data,id.vars = c("Subjects","Activities"))
+ act_sub_var <- group_by(melt_data, Activities,Subjects,variable)
+ sum_data <- summarize(act_sub_var,mean(value))
+ tidy_data <- dcast(sum_data, Activities+Subjects ~ variable, value.var = "mean(value)")
+
+ ```
+ 
+ 
 Short, high-level description of what the cleaning script does [link to the readme document that describes the code in greater detail]()
  
 ##Description of the variables in the tiny_data.txt file
