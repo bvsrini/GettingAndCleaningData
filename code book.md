@@ -85,11 +85,12 @@ features.txt variable names from the data set
 [67] "fBodyBodyGyroJerkMag-mean()" "fBodyBodyGyroJerkMag-std()" 
 ```
 ##Creating the tidy datafile
- 
+  
 ###Guide to create the tidy data file
 Following are the  steps to create the tidy data file. The names within the () at  the end represent the actual names of variables within the script:
 	
-	1. Download the data files from [Project Data Set] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+	1. Download the data files from 
+	[Project Data Set] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 	2. load the  "features.txt" from "UCI HAR Dataset" directory  into a data table (fact)
 	3. Load the "activity_labels.txt" from "UCI HAR Dataset" directory  into a data table (act_lab)
 	4. Observe the values and organization of variables and data in these two files 
