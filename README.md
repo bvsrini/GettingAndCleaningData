@@ -31,50 +31,67 @@ Following are the  steps to create the tidy data file. The names within the () a
 	12.	Load the "y_train.txt" into a data table (to get the activity number of the observation) (y_train)
 	13.	Form one data set by combining the train and test data sets. Attach the column headers and row headers as shown below:
 		a.	Attach X_train data  below the X_test data (data)
+		
 		```
 		data <- rbind(x_test)
         data <- rbind(data,x_train)
+		
 		```
 		b.	Attach the column names for the observations from step 2 on top of this data set (data)
+		
 		```
 		colnames(data) <- fact[,2]
 		```
+		
 		c.	Retain only the columns containing mean() and std() in their variables. 
 		    care is taken not to include variables like meanFreq() (sel_data)
+		
 		```	
 		sel_col_nm <- grep("*.(mean|std)\\(\\)*",colnames(data))
 		sel_data <- data[,sel_col_nm]
 		```
+		
 		d.	Attach the subject_train below the subject_test data (subjects)
+		
 		```
 		subjects <- rbind(subject_test)
         subjects <- rbind(subjects,subject_train)
 		```
+		
 		e.	Attach the y_train data below y_test data (activities)
+		
 		```
 		activities <- rbind(y_test)
         activities <- rbind(activities, y_train)
 		```
+		
 		f.	Attach subjects,activities as  "Subjects" and "Activities1" columns to the sel_data data table.
+		
 		```
 		sel_data <- cbind(sel_data,activities)
         colnames(sel_data)[last_col+2] <- "Activities1"
 		```
+		
 		g.	Add a column "Activities" by resolving the activity numbers on "Activities1" to activity labels using 
 		    act_lab data set from step 2
+		
 		```
 		Activities = as.character(act_lab$V2)[sel_data$Activities1]
         ```		
+		
 		h.	Drop Activities1 column 
 		i.	Replace the column names which are erroneously defined with the correct name.  Please note that even though we are going to 
 		    replace the column names with more descriptive names. However if these descriptive names are not required then this step will 
 			get cleaner names.
+		
 		```
 		colnames(sel_data) <- sub("BodyBody","Body",colnames(sel_data))
 		```
+		
 		j.	Now sel_data contains required columns in the required format.
 	14.	Clean the observations data by aggregating into subjects and activities as follows:
-		 ```
+		
+		```
 		melt_data <- melt(sel_data,id.vars = c("Subjects","Activities"))
         act_sub_var <- group_by(melt_data, Activities,Subjects,variable)
         sum_data <- summarize(act_sub_var,mean(value))
