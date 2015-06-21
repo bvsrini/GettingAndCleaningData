@@ -91,9 +91,15 @@ Following are the  steps to create the tidy data file. The names within the () a
 ```
 ##Sources
 [Code Book Template from DSS Community Site] (https://gist.github.com/JorisSchut/dbc1fc0402f28cad9b41)
+
 [David's personal course project FAQ] (https://class.coursera.org/getdata-015/forum/thread?thread_id=26)
+
 [Tidy Data and Assignment] (https://class.coursera.org/getdata-015/forum/thread?thread_id=27)
+
 [Coursera Discussion Forums](https://class.coursera.org/getdata-015/forum/list?forum_id=10009)
+
 [Stack Overflow - various pages](www.stackoverflow.com)
+
 [An Introduction to reshape2](http://seananderson.ca/2013/10/19/reshape.html) 
+
 CRAN Pages

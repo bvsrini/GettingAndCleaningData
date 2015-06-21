@@ -2,9 +2,6 @@
 Title: "Getting and Cleaning Data- Coursera Project"
 Author: "Srinivasan BV Sastry"
 Date: "Jun-18-2015"
-Output:
-  html_document:
-    keep_md: yes
 ---
  
 ## Project Description
@@ -108,8 +105,8 @@ The high level steps to create the tidy data file is as follows:
 	
 	
 ###Cleaning of the data
-The [README.md] (https://github.com/bvsrini/GettingAndCleaningData/blob/master/README.md)document that describes the code in greater detail. The following are the few cleaning steps that are performed in the code . 
-The steps below refer to the "Detail Steps to create the Tidy data file" section in [README.md] (https://github.com/bvsrini/GettingAndCleaningData/blob/master/README.md)
+The [README.md] (https://github.com/bvsrini/GettingAndCleaningData/blob/master/README.md) document that  describes the code in greater detail. The following are the few cleaning steps that are performed in the code . 
+The steps below refer to the "Detail Steps to create the Tidy data file" section in [README.md] (https://github.com/bvsrini/GettingAndCleaningData/blob/master/README.md).
  The above guide gives a great detail on the steps. This section concentrates on specific steps that specify the cleaning activities:
  Step 13 (c) - Retain only the columns containing mean() and std() in their variables. care is taken not to include variables like meanFreq() (sel_data)
  This step uses grep to pick columns that have mean() or std() as part of their name. 
@@ -290,12 +287,19 @@ The steps below refer to the "Detail Steps to create the Tidy data file" section
  
 ##Sources
 [Code Book Template from DSS Community Site] (https://gist.github.com/JorisSchut/dbc1fc0402f28cad9b41)
+
 [David's personal course project FAQ] (https://class.coursera.org/getdata-015/forum/thread?thread_id=26)
+
 [Tidy Data and Assignment] (https://class.coursera.org/getdata-015/forum/thread?thread_id=27)
+
 [Coursera Discussion Forums](https://class.coursera.org/getdata-015/forum/list?forum_id=10009)
+
 Stack Overflow - various pages
+
 [An Introduction to reshape2](http://seananderson.ca/2013/10/19/reshape.html) 
+
 CRAN Pages
+
 [Markdown Cheatsheet](rmarkdown.rstudio.com)
 
  
