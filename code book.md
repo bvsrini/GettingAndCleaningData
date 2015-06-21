@@ -1,8 +1,8 @@
 ---
-title: "Getting and Cleaning Data- Coursera Project"
-author: "Srinivasan BV Sastry"
-date: "Jun-18-2015"
-output:
+Title: "Getting and Cleaning Data- Coursera Project"
+Author: "Srinivasan BV Sastry"
+Date: "Jun-18-2015"
+Output:
   html_document:
     keep_md: yes
 ---
@@ -108,28 +108,28 @@ The high level steps to create the tidy data file is as follows:
 	
 	
 ###Cleaning of the data
-The Readme.md document that describes the code in greater detail. The following are the few cleaning steps that are performed in the code . 
-The steps below refer to the "Detail Steps to create the Tidy data file" section in Readme.md
+The [README.md] (https://github.com/bvsrini/GettingAndCleaningData/blob/master/README.md)document that describes the code in greater detail. The following are the few cleaning steps that are performed in the code . 
+The steps below refer to the "Detail Steps to create the Tidy data file" section in [README.md] (https://github.com/bvsrini/GettingAndCleaningData/blob/master/README.md)
  The above guide gives a great detail on the steps. This section concentrates on specific steps that specify the cleaning activities:
- Step 15 (c) - Retain only the columns containing mean() and std() in their variables. care is taken not to include variables like meanFreq() (sel_data)
+ Step 13 (c) - Retain only the columns containing mean() and std() in their variables. care is taken not to include variables like meanFreq() (sel_data)
  This step uses grep to pick columns that have mean() or std() as part of their name. 
  ```
  sel_col_nm <- grep("*.(mean|std)\\(\\)*",colnames(data))
  sel_data <- data[,sel_col_nm]
  ```
   
- Step 15 (g) - Add a column "Activities" by resolving the activity numbers on "Activities1" to activity labels using act_lab data set from step 2
+ Step 13 (g) - Add a column "Activities" by resolving the activity numbers on "Activities1" to activity labels using act_lab data set from step 2
  This step is accomplished by looking up the activity labels from act_lab dataset based on the Activities number in Activities1 variable. 
  
  ```
  Activities = as.character(act_lab$V2)[sel_data$Activities1]
  ```
- Step 15 (i) -  Replace the column names which are erroneously defined with the correct name. 
+ Step 13 (i) -  Replace the column names which are erroneously defined with the correct name. 
  The following code replaces the columns that contains "BodyBody" with "Body" as specified in the section "Notes on Original (Raw) Data"
  ```
  colnames(sel_data) <- sub("BodyBody","Body",colnames(sel_data))
  ```
- Step 16: Clean the observations data by aggregating into subjects and activities as follows:
+ Step 14: Clean the observations data by aggregating into subjects and activities as follows:
  The following code melts the columns, aggregates it and converts to wide format. Pls. note that change to Subjects variables is changed to factor 
  for easy manipulation.
  ```
@@ -289,7 +289,13 @@ The steps below refer to the "Detail Steps to create the Tidy data file" section
 
  
 ##Sources
-Sources you used if any, otherise leave out
+[Code Book Template from DSS Community Site] (https://gist.github.com/JorisSchut/dbc1fc0402f28cad9b41)
+[David's personal course project FAQ] (https://class.coursera.org/getdata-015/forum/thread?thread_id=26)
+[Tidy Data and Assignment] (https://class.coursera.org/getdata-015/forum/thread?thread_id=27)
+[Coursera Discussion Forums](https://class.coursera.org/getdata-015/forum/list?forum_id=10009)
+Stack Overflow - various pages
+[An Introduction to reshape2](http://seananderson.ca/2013/10/19/reshape.html) 
+CRAN Pages
+[Markdown Cheatsheet](rmarkdown.rstudio.com)
+
  
-##Annex
-If you used any code in the codebook that had the echo=FALSE attribute post this here (make sure you set the results parameter to hide as you do not want the results to show again)

@@ -34,7 +34,7 @@ Following are the  steps to create the tidy data file. The names within the () a
 			data <- rbind(x_test)
 			data <- rbind(data,x_train)
 		b.	Attach the column names for the observations from step 2 on top of this data set (data)
-		colnames(data) <- fact[,2]
+			colnames(data) <- fact[,2]
 		
 		c.	Retain only the columns containing mean() and std() in their variables. 
 		    care is taken not to include variables like meanFreq() (sel_data)
@@ -77,9 +77,9 @@ Following are the  steps to create the tidy data file. The names within the () a
 		b.	Aggregate (get the mean) the molten data by Activities,Subjects,Variables columns. 
 			This will get one value for each subject,activity and a variable combination.
 		c.	Assign a tidy data set by transposing  the molten data into a wide format so we get tidy_data in the following format.
-		 "Activities", "Subjects" ,"tBodyAcc-mean()-X" ,"tBodyAcc-mean()-Y","tBodyAcc-mean()-Z","tBodyAcc-std()-X","tBodyAcc-std()-Y" etc
+			"Activities", "Subjects" ,"tBodyAcc-mean()-X" ,"tBodyAcc-mean()-Y","tBodyAcc-mean()-Z","tBodyAcc-std()-X","tBodyAcc-std()-Y" etc
 		d. Assign the column names of the tidy data set with more descriptive names of the variables. 
-		  Please note that these names are really long as required by the project.
+			Please note that these names are really long as required by the project.
 
 ## Reading the tidy data into R.
 
