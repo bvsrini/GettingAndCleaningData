@@ -86,6 +86,8 @@ features.txt variable names from the data set
   
 ###Guide to create the tidy data file
 The high level steps to create the tidy data file is as follows:
+
+
 1. Download the data files from the [Project Data Set] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 2. Load the following files  into separate data sets (Pls. note we are not loading the files within Inertial Signal directories)
 	* features.txt: 
