@@ -142,7 +142,7 @@ The steps below refer to the "Detail Steps to create the Tidy data file" section
 ##Details on the variables of Tidy Data
 
 |S.No|Variable Names                                                                                |Data Type|Values/Levels                                                       |
-| - - - -|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |- - - - - - - - - |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|----|----------------------------------------------------------------------------------------------|---------|--------------------------------------------------------------------|
 |1   | $ Activities                                                                                 |Factor   | w/ 6 levels ""LAYING"",""SITTING"",..: 1 1 1 1 1 1 1 1 1 1 ..."    |
 |2   | $ Subjects                                                                                   |Factor   | w/ 30 levels ""1"",""2"",""3"",""4"",..: 1 2 3 4 5 6 7 8 9 10 ..." |
 |3   | $ Mean value of the time domain body acceleration signals across X - axis                    |num      |0.222 0.281 0.276 0.264 0.278 ..."                                  |
