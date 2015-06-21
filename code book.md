@@ -139,6 +139,78 @@ The steps below refer to the "Detail Steps to create the Tidy data file" section
  tidy_data <- dcast(sum_data, Activities+Subjects ~ variable, value.var = "mean(value)")
 
  ```
+##Details on the variables of Tidy Data
+
+|S.No|Variable Names                                                                                |Data Type|Values/Levels                                                       |
+| - - - -|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |- - - - - - - - - |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|1   | $ Activities                                                                                 |Factor   | w/ 6 levels ""LAYING"",""SITTING"",..: 1 1 1 1 1 1 1 1 1 1 ..."    |
+|2   | $ Subjects                                                                                   |Factor   | w/ 30 levels ""1"",""2"",""3"",""4"",..: 1 2 3 4 5 6 7 8 9 10 ..." |
+|3   | $ Mean value of the time domain body acceleration signals across X - axis                    |num      |0.222 0.281 0.276 0.264 0.278 ..."                                  |
+|4   | $ Mean value of the time domain body acceleration signals across  Y - axis                   |num      |-0.0405 -0.0182 -0.019 -0.015 -0.0183 ..."                          |
+|5   | $ Mean value of the time domain body acceleration signals across  Z - axis                   |num      |-0.113 -0.107 -0.101 -0.111 -0.108 ..."                             |
+|6   | $ Standard Deviation of the time domain body acceleration signals across X - axis            |num      |-0.928 -0.974 -0.983 -0.954 -0.966 ..."                             |
+|7   | $ Standard Deviation of the time domain body acceleration signals across Y - axis            |num      |-0.837 -0.98 -0.962 -0.942 -0.969 ..."                              |
+|8   | $ Standard Deviation of the time domain body acceleration signals across Z- axis             |num      |-0.826 -0.984 -0.964 -0.963 -0.969 ..."                             |
+|9   | $ Mean value of the time domain gravity accelation signals across X - axis                   |num      |-0.249 -0.51 -0.242 -0.421 -0.483 ..."                              |
+|10  | $ Mean value of the time domain gravity accelation signals across Y - axis                   |num      |0.706 0.753 0.837 0.915 0.955 ..."                                  |
+|11  | $ Mean value of the time domain gravity accelation signals across Z - axis                   |num      |0.446 0.647 0.489 0.342 0.264 ..."                                  |
+|12  | $ Standard deviation  of the time domain gravity accelation signals across X - axis          |num      |-0.897 -0.959 -0.983 -0.921 -0.946 ..."                             |
+|13  | $ Standard deviation  of the time domain gravity accelation signals across Y - axis          |num      |-0.908 -0.988 -0.981 -0.97 -0.986 ..."                              |
+|14  | $ Standard deviation  of the time domain gravity accelation signals across Z - axis          |num      |-0.852 -0.984 -0.965 -0.976 -0.977 ..."                             |
+|15  | $ Mean value of the time domain body acceleration Jerk signals across X - axis               |num      |0.0811 0.0826 0.077 0.0934 0.0848 ..."                              |
+|16  | $ Mean value of the time domain body acceleration Jerk signals across Y - axis               |num      |0.00384 0.01225 0.0138 0.00693 0.00747 ..."                         |
+|17  | $ Mean value of the time domain body acceleration Jerk signals across Z - axis               |num      |0.01083 -0.0018 -0.00436 -0.00641 -0.00304 ..."                     |
+|18  | $ Standard deviation of the time domain body acceleration Jerk signals across X - axis       |num      |-0.958 -0.986 -0.981 -0.978 -0.983 ..."                             |
+|19  | $ Standard deviation of the time domain body acceleration Jerk signals across Y - axis       |num      |-0.924 -0.983 -0.969 -0.942 -0.965 ..."                             |
+|20  | $ Standard deviation of the time domain body acceleration Jerk signals across Z - axis       |num      |-0.955 -0.988 -0.982 -0.979 -0.985 ..."                             |
+|21  | $ Mean value of the time domain body gyro signals across X - axis                            |num      |-0.01655 -0.01848 -0.02082 -0.00923 -0.02189 ..."                   |
+|22  | $ Mean value of the time domain body gyro signals across Y - axis                            |num      |-0.0645 -0.1118 -0.0719 -0.093 -0.0799 ..."                         |
+|23  | $ Mean value of the time domain body gyro signals across Z - axis                            |num      |0.149 0.145 0.138 0.17 0.16 ..."                                    |
+|24  | $ Standard deviation  of the time domain body gyro signals across X - axis                   |num      |-0.874 -0.988 -0.975 -0.973 -0.979 ..."                             |
+|25  | $ Standard deviation of the time domain body gyro signals across Y - axis                    |num      |-0.951 -0.982 -0.977 -0.961 -0.977 ..."                             |
+|26  | $ Standard deviation  of the time domain body gyro signals across Z - axis                   |num      |-0.908 -0.96 -0.964 -0.962 -0.961 ..."                              |
+|27  | $ Mean value of the time domain body gyro Jerk signals across X - axis                       |num      |-0.107 -0.102 -0.1 -0.105 -0.102 ..."                               |
+|28  | $ Mean value of the time domain body gyro Jerk signals across Y - axis                       |num      |-0.0415 -0.0359 -0.039 -0.0381 -0.0404 ..."                         |
+|29  | $ Mean value of the time domain body gyro Jerk signals across Z - axis                       |num      |-0.0741 -0.0702 -0.0687 -0.0712 -0.0708 ..."                        |
+|30  | $ Standard Deviation of the time domain body gyro Jerk signals across X - axis               |num      |-0.919 -0.993 -0.98 -0.975 -0.983 ..."                              |
+|31  | $ Standard Deviation of the time domain body gyro Jerk signals across Y - axis               |num      |-0.968 -0.99 -0.987 -0.987 -0.984 ..."                              |
+|32  | $ Standard Deviation of the time domain body gyro Jerk signals across Z - axis               |num      |-0.958 -0.988 -0.983 -0.984 -0.99 ..."                              |
+|33  | $ Mean value of the time domain body acceleration magnitude values                           |num      |-0.842 -0.977 -0.973 -0.955 -0.967 ..."                             |
+|34  | $ Standard deviation  of the time domain body acceleration magnitude values                  |num      |-0.795 -0.973 -0.964 -0.931 -0.959 ..."                             |
+|35  | $ Mean value of the time domain gravity magnitude values                                     |num      |-0.842 -0.977 -0.973 -0.955 -0.967 ..."                             |
+|36  | $ Standard Deviation of the time domain gravity magnitude values                             |num      |-0.795 -0.973 -0.964 -0.931 -0.959 ..."                             |
+|37  | $ Mean value of the time domain body acceleration Jerk magnitude values                      |num      |-0.954 -0.988 -0.979 -0.97 -0.98 ..."                               |
+|38  | $ Standard deviation of the time domain body acceleration Jerk magnitude values              |num      |-0.928 -0.986 -0.976 -0.961 -0.977 ..."                             |
+|39  | $ Mean value of the time domain body acceleration gyro magnitude values                      |num      |-0.875 -0.95 -0.952 -0.93 -0.947 ..."                               |
+|40  | $ Standard deviation of the time domain body acceleration gyro magnitude values              |num      |-0.819 -0.961 -0.954 -0.947 -0.958 ..."                             |
+|41  | $ Mean value of the time domain body acceleration gyro jerk magnitude values                 |num      |-0.963 -0.992 -0.987 -0.985 -0.986 ..."                             |
+|42  | $ Standard deviation of the time domain body acceleration gyro Jerk magnitude values         |num      |-0.936 -0.99 -0.983 -0.983 -0.984 ..."                              |
+|43  | $ Mean value of the frequency  domain body acceleration signals across X - axis              |num      |-0.939 -0.977 -0.981 -0.959 -0.969 ..."                             |
+|44  | $ Mean value of the frequency  domain body acceleration signals across Y - axis              |num      |-0.867 -0.98 -0.961 -0.939 -0.965 ..."                              |
+|45  | $ Mean value of the frequency  domain body acceleration signals across Z - axis              |num      |-0.883 -0.984 -0.968 -0.968 -0.977 ..."                             |
+|46  | $ Standard deviation  of the frequency  domain body acceleration signals across X - axis     |num      |-0.924 -0.973 -0.984 -0.952 -0.965 ..."                             |
+|47  | $ Standard deviation  of the frequency  domain body acceleration signals across Y - axis     |num      |-0.834 -0.981 -0.964 -0.946 -0.973 ..."                             |
+|48  | $ Standard deviation of the frequency  domain body acceleration signals across Z - axis      |num      |-0.813 -0.985 -0.963 -0.962 -0.966 ..."                             |
+|49  | $ Mean value of the frequency domain body acceleration Jerk signals across X - axis          |num      |-0.957 -0.986 -0.981 -0.979 -0.983 ..."                             |
+|50  | $ Mean value of the frequency domain body acceleration Jerk signals across  Y- axis          |num      |-0.922 -0.983 -0.969 -0.944 -0.965 ..."                             |
+|51  | $ Mean value of the frequency domain body acceleration Jerk signals across Z - axis          |num      |-0.948 -0.986 -0.979 -0.975 -0.983 ..."                             |
+|52  | $ Standard deviation  of the frequency domain body acceleration Jerk signals across X - axis |num      |-0.964 -0.987 -0.983 -0.98 -0.986 ..."                              |
+|53  | $ Standard deviation of the frequency domain body acceleration Jerk signals across  Y- axis  |num      |-0.932 -0.985 -0.971 -0.944 -0.966 ..."                             |
+|54  | $ Standard deviation of the frequency domain body acceleration Jerk signals across Z - axis  |num      |-0.961 -0.989 -0.984 -0.98 -0.986 ..."                              |
+|55  | $ Mean value of the frequency domain body gyro signals across X - axis                       |num      |-0.85 -0.986 -0.97 -0.967 -0.976 ..."                               |
+|56  | $ Mean value of the frequency domain body gyro signals across  Y - axis                      |num      |-0.952 -0.983 -0.978 -0.972 -0.978 ..."                             |
+|57  | $ Mean value of the frequency domain body gyro signals across  Z- axis                       |num      |-0.909 -0.963 -0.962 -0.961 -0.963 ..."                             |
+|58  | $ Standard deviation of the frequency domain body gyro signals across X - axis               |num      |-0.882 -0.989 -0.976 -0.975 -0.981 ..."                             |
+|59  | $ Standard deviation value of the frequency domain body gyro signals across  Y - axis        |num      |-0.951 -0.982 -0.977 -0.956 -0.977 ..."                             |
+|60  | $ Standard deviation value of the frequency domain body gyro signals across  Z- axis         |num      |-0.917 -0.963 -0.967 -0.966 -0.963 ..."                             |
+|61  | $ Mean value of the frequency domain body acceleration magnitude values                      |num      |-0.862 -0.975 -0.966 -0.939 -0.962 ..."                             |
+|62  | $ Standard Deviation  of the frequency domain body acceleration magnitude values             |num      |-0.798 -0.975 -0.968 -0.937 -0.963 ..."                             |
+|63  | $ Mean value of the frequency domain body acceleration Jerk magnitude values                 |num      |-0.933 -0.985 -0.976 -0.962 -0.977 ..."                             |
+|64  | $ Standard deviation of the frequency domain body acceleration Jerk magnitude values         |num      |-0.922 -0.985 -0.975 -0.958 -0.976 ..."                             |
+|65  | $ Mean value of the frequency domain body acceleration gyro magnitude values                 |num      |-0.862 -0.972 -0.965 -0.962 -0.968 ..."                             |
+|66  | $ Standard deviation  of the frequency domain body acceleration gyro magnitude values        |num      |-0.824 -0.961 -0.955 -0.947 -0.959 ..."                             |
+|67  | $ Mean value of the frequency domain body acceleration gyro jerk magnitude values            |num      |-0.942 -0.99 -0.984 -0.984 -0.985 ..."                              |
+|68  | $ Standard deviation  of the frequency domain body acceleration gyro jerk magnitude values   |num      |-0.933 -0.989 -0.983 -0.983 -0.983 ..."                             |
 
 ##Description of the variables in the tidy_data
 |S.no|Column Names in Features.txt  |Column Name in Tidy data                                                                    |Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -212,77 +284,6 @@ The steps below refer to the "Detail Steps to create the Tidy data file" section
 |67  |fBodyGyroJerkMag-mean()       |Mean value of the frequency domain body acceleration gyro jerk magnitude values.            |Mean value of the frequency domain body acceleration gyro jerk magnitude values.  Using accelerometer and gyroscope 50hz signals were got and  filtered using a  median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. It is then separated into body accelartion signal using another low pass Butterworth filter with a corner frequency of 0.3 Hz. the body linear acceleration and angular velocity were derived in time to obtain Jerk signals.This vector obtained by averaging the signals in a signal window sample. The magnitude of these three-dimensional signals were calculated using the Euclidean norm.A Fast Fourier Transform (FFT) was applied to some of these signals producing these f signals. (f denotes 'frequency domain signal' , BodyAccGyroMag - Body Accelaration Gyro Magnitude Value)          |
 |68  |fBodyGyroJerkMag-std()        |Standard deviation  of the frequency domain body acceleration gyro jerk magnitude values.   |Standard deviation  of the frequency domain body acceleration gyro jerk magnitude values.  Using accelerometer and gyroscope 50hz signals were got and  filtered using a  median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. It is then separated into body accelartion signal using another low pass Butterworth filter with a corner frequency of 0.3 Hz. the body linear acceleration and angular velocity were derived in time to obtain Jerk signals. This vector obtained by averaging the signals in a signal window sample.The magnitude of these three-dimensional signals were calculated using the Euclidean norm.A Fast Fourier Transform (FFT) was applied to some of these signals producing these f signals. (f denotes 'frequency domain signal' , BodyAccGyroMag - Body Accelaration Gyro Magnitude Value) |
 
-Following are the details of the Tidy Data
-----
-*  1,"'data.frame':180 obs. of  68 variables:"
-*  2," $ Activities                                                                                : Factor w/ 6 levels ""LAYING"",""SITTING"",..: 1 1 1 1 1 1 1 1 1 1 ..."
-*  3," $ Subjects                                                                                  : Factor w/ 30 levels ""1"",""2"",""3"",""4"",..: 1 2 3 4 5 6 7 8 9 10 ..."
-*  4," $ Mean value of the time domain body acceleration signals across X - axis                   : num  0.222 0.281 0.276 0.264 0.278 ..."
-*  5," $ Mean value of the time domain body acceleration signals across  Y - axis                  : num  -0.0405 -0.0182 -0.019 -0.015 -0.0183 ..."
-*  6," $ Mean value of the time domain body acceleration signals across  Z - axis                  : num  -0.113 -0.107 -0.101 -0.111 -0.108 ..."
-*  7," $ Standard Deviation of the time domain body acceleration signals across X - axis           : num  -0.928 -0.974 -0.983 -0.954 -0.966 ..."
-*  8," $ Standard Deviation of the time domain body acceleration signals across Y - axis           : num  -0.837 -0.98 -0.962 -0.942 -0.969 ..."
-*  9," $ Standard Deviation of the time domain body acceleration signals across Z- axis            : num  -0.826 -0.984 -0.964 -0.963 -0.969 ..."
-*  10," $ Mean value of the time domain gravity accelation signals across X - axis                  : num  -0.249 -0.51 -0.242 -0.421 -0.483 ..."
-*  11," $ Mean value of the time domain gravity accelation signals across Y - axis                  : num  0.706 0.753 0.837 0.915 0.955 ..."
-*  12," $ Mean value of the time domain gravity accelation signals across Z - axis                  : num  0.446 0.647 0.489 0.342 0.264 ..."
-*  13," $ Standard deviation  of the time domain gravity accelation signals across X - axis         : num  -0.897 -0.959 -0.983 -0.921 -0.946 ..."
-*  14," $ Standard deviation  of the time domain gravity accelation signals across Y - axis         : num  -0.908 -0.988 -0.981 -0.97 -0.986 ..."
-*  15," $ Standard deviation  of the time domain gravity accelation signals across Z - axis         : num  -0.852 -0.984 -0.965 -0.976 -0.977 ..."
-*  16," $ Mean value of the time domain body acceleration Jerk signals across X - axis              : num  0.0811 0.0826 0.077 0.0934 0.0848 ..."
-*  17," $ Mean value of the time domain body acceleration Jerk signals across Y - axis              : num  0.00384 0.01225 0.0138 0.00693 0.00747 ..."
-*  18," $ Mean value of the time domain body acceleration Jerk signals across Z - axis              : num  0.01083 -0.0018 -0.00436 -0.00641 -0.00304 ..."
-*  19," $ Standard deviation of the time domain body acceleration Jerk signals across X - axis      : num  -0.958 -0.986 -0.981 -0.978 -0.983 ..."
-*  20," $ Standard deviation of the time domain body acceleration Jerk signals across Y - axis      : num  -0.924 -0.983 -0.969 -0.942 -0.965 ..."
-*  21," $ Standard deviation of the time domain body acceleration Jerk signals across Z - axis      : num  -0.955 -0.988 -0.982 -0.979 -0.985 ..."
-*  22," $ Mean value of the time domain body gyro signals across X - axis                           : num  -0.01655 -0.01848 -0.02082 -0.00923 -0.02189 ..."
-*  23," $ Mean value of the time domain body gyro signals across Y - axis                           : num  -0.0645 -0.1118 -0.0719 -0.093 -0.0799 ..."
-*  24," $ Mean value of the time domain body gyro signals across Z - axis                           : num  0.149 0.145 0.138 0.17 0.16 ..."
-*  25," $ Standard deviation  of the time domain body gyro signals across X - axis                  : num  -0.874 -0.988 -0.975 -0.973 -0.979 ..."
-*  26," $ Standard deviation of the time domain body gyro signals across Y - axis                   : num  -0.951 -0.982 -0.977 -0.961 -0.977 ..."
-*  27," $ Standard deviation  of the time domain body gyro signals across Z - axis                  : num  -0.908 -0.96 -0.964 -0.962 -0.961 ..."
-*  28," $ Mean value of the time domain body gyro Jerk signals across X - axis                      : num  -0.107 -0.102 -0.1 -0.105 -0.102 ..."
-*  29," $ Mean value of the time domain body gyro Jerk signals across Y - axis                      : num  -0.0415 -0.0359 -0.039 -0.0381 -0.0404 ..."
-*  30," $ Mean value of the time domain body gyro Jerk signals across Z - axis                      : num  -0.0741 -0.0702 -0.0687 -0.0712 -0.0708 ..."
-*  31," $ Standard Deviation of the time domain body gyro Jerk signals across X - axis              : num  -0.919 -0.993 -0.98 -0.975 -0.983 ..."
-*  32," $ Standard Deviation of the time domain body gyro Jerk signals across Y - axis              : num  -0.968 -0.99 -0.987 -0.987 -0.984 ..."
-*  33," $ Standard Deviation of the time domain body gyro Jerk signals across Z - axis              : num  -0.958 -0.988 -0.983 -0.984 -0.99 ..."
-*  34," $ Mean value of the time domain body acceleration magnitude values                          : num  -0.842 -0.977 -0.973 -0.955 -0.967 ..."
-*  35," $ Standard deviation  of the time domain body acceleration magnitude values                 : num  -0.795 -0.973 -0.964 -0.931 -0.959 ..."
-*  36," $ Mean value of the time domain gravity magnitude values                                    : num  -0.842 -0.977 -0.973 -0.955 -0.967 ..."
-*  37," $ Standard Deviation of the time domain gravity magnitude values                            : num  -0.795 -0.973 -0.964 -0.931 -0.959 ..."
-*  38," $ Mean value of the time domain body acceleration Jerk magnitude values                     : num  -0.954 -0.988 -0.979 -0.97 -0.98 ..."
-*  39," $ Standard deviation of the time domain body acceleration Jerk magnitude values             : num  -0.928 -0.986 -0.976 -0.961 -0.977 ..."
-*  40," $ Mean value of the time domain body acceleration gyro magnitude values                     : num  -0.875 -0.95 -0.952 -0.93 -0.947 ..."
-*  41," $ Standard deviation of the time domain body acceleration gyro magnitude values             : num  -0.819 -0.961 -0.954 -0.947 -0.958 ..."
-*  42," $ Mean value of the time domain body acceleration gyro jerk magnitude values                : num  -0.963 -0.992 -0.987 -0.985 -0.986 ..."
-*  43," $ Standard deviation of the time domain body acceleration gyro Jerk magnitude values        : num  -0.936 -0.99 -0.983 -0.983 -0.984 ..."
-*  44," $ Mean value of the frequency  domain body acceleration signals across X - axis             : num  -0.939 -0.977 -0.981 -0.959 -0.969 ..."
-*  45," $ Mean value of the frequency  domain body acceleration signals across Y - axis             : num  -0.867 -0.98 -0.961 -0.939 -0.965 ..."
-*  46," $ Mean value of the frequency  domain body acceleration signals across Z - axis             : num  -0.883 -0.984 -0.968 -0.968 -0.977 ..."
-*  47," $ Standard deviation  of the frequency  domain body acceleration signals across X - axis    : num  -0.924 -0.973 -0.984 -0.952 -0.965 ..."
-*  48," $ Standard deviation  of the frequency  domain body acceleration signals across Y - axis    : num  -0.834 -0.981 -0.964 -0.946 -0.973 ..."
-*  49," $ Standard deviation of the frequency  domain body acceleration signals across Z - axis     : num  -0.813 -0.985 -0.963 -0.962 -0.966 ..."
-*  50," $ Mean value of the frequency domain body acceleration Jerk signals across X - axis         : num  -0.957 -0.986 -0.981 -0.979 -0.983 ..."
-*  51," $ Mean value of the frequency domain body acceleration Jerk signals across  Y- axis         : num  -0.922 -0.983 -0.969 -0.944 -0.965 ..."
-*  52," $ Mean value of the frequency domain body acceleration Jerk signals across Z - axis         : num  -0.948 -0.986 -0.979 -0.975 -0.983 ..."
-*  53," $ Standard deviation  of the frequency domain body acceleration Jerk signals across X - axis: num  -0.964 -0.987 -0.983 -0.98 -0.986 ..."
-*  54," $ Standard deviation of the frequency domain body acceleration Jerk signals across  Y- axis : num  -0.932 -0.985 -0.971 -0.944 -0.966 ..."
-*  55," $ Standard deviation of the frequency domain body acceleration Jerk signals across Z - axis : num  -0.961 -0.989 -0.984 -0.98 -0.986 ..."
-*  56," $ Mean value of the frequency domain body gyro signals across X - axis                      : num  -0.85 -0.986 -0.97 -0.967 -0.976 ..."
-*  57," $ Mean value of the frequency domain body gyro signals across  Y - axis                     : num  -0.952 -0.983 -0.978 -0.972 -0.978 ..."
-*  58," $ Mean value of the frequency domain body gyro signals across  Z- axis                      : num  -0.909 -0.963 -0.962 -0.961 -0.963 ..."
-*  59," $ Standard deviation of the frequency domain body gyro signals across X - axis              : num  -0.882 -0.989 -0.976 -0.975 -0.981 ..."
-*  60," $ Standard deviation value of the frequency domain body gyro signals across  Y - axis       : num  -0.951 -0.982 -0.977 -0.956 -0.977 ..."
-*  61," $ Standard deviation value of the frequency domain body gyro signals across  Z- axis        : num  -0.917 -0.963 -0.967 -0.966 -0.963 ..."
-*  62," $ Mean value of the frequency domain body acceleration magnitude values                     : num  -0.862 -0.975 -0.966 -0.939 -0.962 ..."
-*  63," $ Standard Deviation  of the frequency domain body acceleration magnitude values            : num  -0.798 -0.975 -0.968 -0.937 -0.963 ..."
-*  64," $ Mean value of the frequency domain body acceleration Jerk magnitude values                : num  -0.933 -0.985 -0.976 -0.962 -0.977 ..."
-*  65," $ Standard deviation of the frequency domain body acceleration Jerk magnitude values        : num  -0.922 -0.985 -0.975 -0.958 -0.976 ..."
-*  66," $ Mean value of the frequency domain body acceleration gyro magnitude values                : num  -0.862 -0.972 -0.965 -0.962 -0.968 ..."
-*  67," $ Standard deviation  of the frequency domain body acceleration gyro magnitude values       : num  -0.824 -0.961 -0.955 -0.947 -0.959 ..."
-*  68," $ Mean value of the frequency domain body acceleration gyro jerk magnitude values           : num  -0.942 -0.99 -0.984 -0.984 -0.985 ..."
-*  69," $ Standard deviation  of the frequency domain body acceleration gyro jerk magnitude values  : num  -0.933 -0.989 -0.983 -0.983 -0.983 ..."
 
  
 ##Sources
