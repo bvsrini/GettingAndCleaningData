@@ -1,13 +1,22 @@
-############################################################################################
+###########################################################################################################
+# R Code : run_analysis.R
+# Author : Srinivasan BV Sastry
+# Date   : Jun-21-2015 
+#
 # This run_analysis.R code prepares a tidy data based on 
 # "Human Activity Recognition Using Smart phones Dataset Version 10" data set 
 # collected from  the https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) 
-# It is assumed that the data set is located in the "UCI HAR Dataset" directory after the data set
-# is extracted.
+# It is assumed that this r code is placed in the  "UCI HAR Dataset" directory after the data set
+# is extracted before execution.
 #
 # The README.md and "code book.md" describes the columns and steps in greated detail
 # args : no arguments
-###########################################################################################################
+# 
+# Improvements  :  1, The existence of the files and read status of the files can be checked by 
+# for next ver.       creating a new function 
+#                  2. The descriptive column names can  be read from a file rather than embedded in the 
+#                     code
+# #########################################################################################################
 
 # Load the required libraries   
         library(dplyr)

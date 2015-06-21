@@ -1,6 +1,6 @@
 # Read me file  for Getting and Cleaning Data  project
-The read me explains how the 5 steps were achieved and the code to create them. It is assumed that the data set is 
-located in the "UCI HAR Dataset" directory after the data set is extracted. The order of the steps is not necessarily 
+The read me explains how the 5 steps of the project were achieved and the code to create them. It is assumed that the program is 
+also located in the "UCI HAR Dataset" directory where the data set is extracted. The order of the steps for the code is not necessarily 
 the same as requested by the project because when creating the code, it was better to follow the sequence given in the 
 detailed steps for performance reason. As an example, it was better to remove the unwanted columns before the entire 
 data set is collated. 

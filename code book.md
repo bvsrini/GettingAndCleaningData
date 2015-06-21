@@ -6,18 +6,18 @@ Date: "Jun-18-2015"
  
 ## Project Description
 The project involves using the data collected from the accelerometers from the Samsung Galaxy S Smart phone, working with it and 
-prepare a clean data set "Human Activity Recognition Using Smart phones Dataset Version 10" data set collected from  the 
+prepare a clean data set "Human Activity Recognition Using Smart phones Dataset Version 10". Data set collected from  the 
  [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) or 
 [Project Data Set] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) site is studied and a tidy 
-data set is worked out for useful analysis The tidy set involves only the data associated with  the mean and standard deviation of 
-multiple variables associated  with the data files 
+data set is worked out for useful analysis. The tidy set contains only the data associated with  the mean and standard deviation 
+variables associated  given in the data files. 
  
 ##Study design and data processing
-The original data  was collected from the Samsung Galaxy phones from 30 volunteers by various experiments 
+The original data  was collected from the Samsung Galaxy phones from 30 volunteers by various experiments. 
 Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a 
-smart phone (Samsung Galaxy S II) on the waist Using its embedded accelerometer and gyroscope, number of observations were captured  for 
+smart phone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, number of observations were captured  for 
 the 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The obtained dataset has been randomly partitioned 
-into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data
+into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
 The "Data Set Information" in the  [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) 
  or the README.txt contains more information
 
@@ -29,24 +29,30 @@ The data set contains following files
 * activity_labels.txt: Labels for  the x_train and x_test with their activity name
 * train/X_train.txt: Training set
 * train/y_train.txt: Training labels
+* train/subject_train.txt : Subjects who performed the activities
 * test/X_test.txt: Test set
 * test/y_test.txt: Test labels
+* test/subject_test.txt  :Subjects who performed the activities.
 
-The entire data set is partitioned into X_train.txt and X_test.txt The corresponding activity numbers for the observations are in y_train.txt 
-and y_test.txt respectively.So the complete data set must be compiled by combining these two data sets The column headers are in features.txt  
+The entire data set is partitioned into X_train.txt and X_test.txt. The column headers for this data set is  in features.txt  
+The  activity numbers for the observations are in y_train.txt and y_test.txt respectively.
+The  subject numbers for the observations are in subject_train and subject_test respectively.
+The complete data set must be compiled by combining these two X_ data sets. We are not including the data files 
+in the "Inertial Signals" folders. 
 
-The project requires to select only variables that have mean() and std()  There are 66 variables that fit this criteria The tidy data requires 
-data aggregated for all the subjects ( ie30) for all activities (i.e. 6) So the final tidy data set is expected to have 6 * 30 = 180 rows  for all 
-subjects and activities and  66 variables + subject + activities = 68 columns 
+The project requires to select only variables that have mean() and std().  There are 66 variables that fit this criteria. The tidy data requires 
+data aggregated for all the subjects ( i.e. 30) for all activities (i.e. 6). So the final tidy data set is expected to have 6 * 30 = 180 rows  for all 
+subjects and activities and 68 columns (66 variables + subject + activities).
 
 ###Collection of the raw data
-The following link explains how the original data is collected and pre-processed from the  30 volunteers 
-[UCI Machine Learning Repository- Data Set](https://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.names)
+The following link explains how the original data is collected and pre-processed from the  30 volunteers:
+
+[UCI Machine Learning Repository- Data Set](https://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.names).
 
 ###Notes on the original (raw) data 
-There are total 30 volunteers (or subjects) The train data set contains 70% of the volunteer population and the test data set contains 30%.
+There are total 30 volunteers (or subjects). The train data set contains 70% of the volunteer population and the test data set contains 30%.
 So the train data set  contains activities 21 subjects (volunteers) and the test data set contains 9 subjects.  There are 7352 observations on the train
-data set and 2947 observations on the test data set.  Out of the total 10299 observations the no of observations for each subject is not equal
+data set and 2947 observations on the test data set.  Out of the total 10299 observations the number of observations for each subject is not equal
 as seen below. 
 ``` {r}
 ## Here sel_data is the data set containing variables selected for this project
@@ -87,7 +93,7 @@ The high level steps to create the tidy data file is as follows:
 
 1. Download the data files from the [Project Data Set] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 2. Load the following files  into separate data sets (Pls. note we are not loading the files within Inertial Signal directories)
-	* features.txt: 
+	* features.txt
 	* activity_labels.txt
 	* train/X_train.txt
 	* train/y_train.txt
@@ -96,18 +102,21 @@ The high level steps to create the tidy data file is as follows:
 	* test/y_test.txt
 	* test/subject_test.txt
 3. Observe the data in each of the above data sets
-4. Combine the test,train observations, subjects,activities (y_train,y_test) data in the same order and attach them into one data set.
+4. Combine the test,train observations, subjects (subjects_train,subject_test),activities (y_train,y_test) data in the same order and 
+    attach them into one data set.
 5. Add variable names from features.txt to the data set in step (4) as column names
 6. Subset the data in step (5) to include only mean() and std() variables.
 7. Change the activity numbers to Activity labels using the activity_labels.txt
 8. Aggregate the data by Activities,Subjects so we have one value for Activities,Subjects and a variable
-9. Replace the Variable names by descriptive variable names. Create the descriptive variable names by reading the Readme.txt and features_info.txt
+9. Replace the Variable names by descriptive variable names. Create the descriptive variable names using the Readme.txt and features_info.txt
 	
 	
 ###Cleaning of the data
-The [README.md] (https://github.com/bvsrini/GettingAndCleaningData/blob/master/README.md) document that  describes the code in greater detail. The following are the few cleaning steps that are performed in the code . 
+The [README.md] (https://github.com/bvsrini/GettingAndCleaningData/blob/master/README.md) document that  describes the code in greater detail. 
+The following are the few cleaning steps that are performed in the code . 
 The steps below refer to the "Detail Steps to create the Tidy data file" section in [README.md] (https://github.com/bvsrini/GettingAndCleaningData/blob/master/README.md).
- The above guide gives a great detail on the steps. This section concentrates on specific steps that specify the cleaning activities:
+
+This section concentrates on specific steps that specify the cleaning activities:
  Step 13 (c) - Retain only the columns containing mean() and std() in their variables. care is taken not to include variables like meanFreq() (sel_data)
  This step uses grep to pick columns that have mean() or std() as part of their name. 
  ```
@@ -139,6 +148,8 @@ The steps below refer to the "Detail Steps to create the Tidy data file" section
 
  ```
 ##Details on the variables of Tidy Data
+The descriptive variable names are obtained from using the information in the README.txt and features_info.txt files found in the data set. It is obtained by 
+expanding the abbreviated names originally used with the descriptions.
 
 |S.No|Variable Names                                                                                |Data Type|Values/Levels                                                       |
 |----|----------------------------------------------------------------------------------------------|---------|--------------------------------------------------------------------|
@@ -212,7 +223,9 @@ The steps below refer to the "Detail Steps to create the Tidy data file" section
 |68  | $ Standard deviation  of the frequency domain body acceleration gyro jerk magnitude values   |num      |-0.933 -0.989 -0.983 -0.983 -0.983 ..."                             |
 
 ##Description of the variables in the tidy_data
-|S.no|Column Names in Features.txt  |Column Name in Tidy data                                                                    |Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+The column "Column Name in Tidy Data" provides the descriptive names in the [tidy_data. txt] (https://github.com/bvsrini/GettingAndCleaningData/blob/master/tidy_data.txt)
+
+|S.no|Column Names in Features.txt  |Column Name in Tidy Data                                                                    |Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |----|------------------------------|--------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |1   |                              |Activities                                                                                  |One of the six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)  performed by the subject wearing a smartphone (Samsung Galaxy S II) on the waist.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |2   |                              |Subjects                                                                                    |Subject who performed the activitity for the  measurment window                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
@@ -302,4 +315,4 @@ CRAN Pages
 
 [Markdown Cheatsheet](rmarkdown.rstudio.com)
 
- 
+[UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) and  [Project Data Set] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) for the data sets
