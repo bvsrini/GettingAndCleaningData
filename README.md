@@ -1,7 +1,9 @@
 # Read me file  for Getting and Cleaning Data  project
-The read me explains how the 5 steps were achieved and the code to create them. The order of the steps is not necessarily the same as 
-requested by the project because when creating the code, it was better to follow the sequence given in the detailed steps for performance 
-reason. As an example, it was better to remove the unwanted columns before the entire data set is collated. 
+The read me explains how the 5 steps were achieved and the code to create them. It is assumed that the data set is 
+located in the "UCI HAR Dataset" directory after the data set is extracted. The order of the steps is not necessarily 
+the same as requested by the project because when creating the code, it was better to follow the sequence given in the 
+detailed steps for performance reason. As an example, it was better to remove the unwanted columns before the entire 
+data set is collated. 
 
 #### Project Step 1: Merges the training and the test sets to create one data set.
 	 This step of the project is achieved  from the following detailed steps 1 through 13 (b).
@@ -23,7 +25,7 @@ Following are the  steps to create the tidy data file. The names within the () a
 	4.	Load the "activity_labels.txt" from "UCI HAR Dataset" directory  into a data table (act_lab)
 	5.	Change the directory to "test" to get the "test" observations
 	6.	Load the "subject_test.txt" (to get the subject number for each of the observation) into a data table (subject_test) 
-	7.	Load the "X_test.txt" into a data table (x_test)
+	7.	Load the "X_test.txt" in#to a data table (x_test)
 	8.	Load the "y_test.txt" into a data table (to get the activity number of the observation)(y_test)
 	9.	Change the directory to "train" to get the "train" observations
 	10.	Load the "subject_train.txt" (to get the subject number for each of the observation) into a data table (subject_train)
