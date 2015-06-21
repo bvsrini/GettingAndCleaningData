@@ -14,6 +14,7 @@ reason. As an example, it was better to remove the unwanted columns before the e
 	 This project step is achieved from the detail step.
 ## Detail Steps to create the Tidy data file	
 Following are the  steps to create the tidy data file. The names within the () at  the end represent the actual names of variables within the script:
+
 	1.	Load the (dplyr) and (reshaape2) libraries that are needed for this project. 
 	2.	Download the data files from [Project Data Set] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 	3.	load the  "features.txt" from "UCI HAR Dataset" directory  into a data table (fact)
