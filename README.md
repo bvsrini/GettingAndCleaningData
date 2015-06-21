@@ -4,18 +4,19 @@ requested by the project because when creating the code, it was better to follow
 reason. As an example, it was better to remove the unwanted columns before the entire data set is collated. 
 
 #### Project Step 1: Merges the training and the test sets to create one data set.
-	This step of the project is achieved  from the following detailed steps 1 through 16 (b).
+	 This step of the project is achieved  from the following detailed steps 1 through 16 (b).
 #### Project Step 2 :Extracts only the measurements on the mean and standard deviation for each measurement. 
-	This project step is achieved from the detailed step  13 (c)
-#### Project Step 3: Uses descriptive activity names to name the activities in the data set
-   This project step is achieved from the detail step 13(g)
+	 This project step is achieved from the detailed step  13 (c).
+#### Project Step 3: Uses descriptive activity names to name the activities in the data set.
+     This project step is achieved from the detail step 13(g).
 #### Project Step 4: Appropriately labels the data set with descriptive variable names.
-   This project step is achieved from the detail step 14(d)
+     This project step is achieved from the detail step 14(d).
 #### Project Step 5 : From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-	This project step is achieved from the detail step 
+	 This project step is achieved from the detail step.
 
 ## Detail Steps to create the Tidy data file	
 Following are the  steps to create the tidy data file. The names within the () at  the end represent the actual names of variables within the script:
+
 	1.	Load the (dplyr) and (reshaape2) libraries that are needed for this project. 
 	2.	Download the data files from [Project Data Set] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 	3.	load the  "features.txt" from "UCI HAR Dataset" directory  into a data table (fact)
@@ -97,10 +98,16 @@ Following are the  steps to create the tidy data file. The names within the () a
 ```
 ##Sources
 [Code Book Template from DSS Community Site] (https://gist.github.com/JorisSchut/dbc1fc0402f28cad9b41)
+
 [David's personal course project FAQ] (https://class.coursera.org/getdata-015/forum/thread?thread_id=26)
+
 [Tidy Data and Assignment] (https://class.coursera.org/getdata-015/forum/thread?thread_id=27)
+
 [Coursera Discussion Forums](https://class.coursera.org/getdata-015/forum/list?forum_id=10009)
-Stack Overflow - various pages
+
+[Stack Overflow - various pages](www.stackoverflow.com)
+
 [An Introduction to reshape2](http://seananderson.ca/2013/10/19/reshape.html) 
+
 CRAN Pages
 
